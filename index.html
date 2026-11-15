@@ -138,6 +138,13 @@ h1,h2,h3,p{margin:0}
 .phone-scroll img{display:block;width:100%;height:auto}
 .hint{font-family:var(--font-mono);font-size:11px;color:var(--soft);text-align:center}
 
+/* Latihan program switch */
+.ltabs{display:flex;flex-direction:column;gap:16px}
+.ltabs>.vtabs{align-self:flex-start}
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.phases li{display:flex;align-items:center;gap:14px;min-height:48px;padding:8px 14px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);font-weight:600}
+.phases b{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--accent)}
+
 /* Cover: vertical type menu */
 .vnav{display:grid;grid-template-columns:minmax(0,1fr) auto;height:clamp(230px,34vh,320px);background:#07050b;border:1px solid var(--hair);border-radius:14px;overflow:hidden}
 .vprev{padding:16px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-width:0}
@@ -497,7 +504,9 @@ h1,h2,h3,p{margin:0}
         <p class="num">03</p>
         <h2 class="title">Latihan AI<span class="cur" aria-hidden="true"></span></h2>
       </div>
-      <div class="split">
+      <div class="ltabs" data-views>
+      <div class="vtabs"><button type="button" class="sel" data-view="a" aria-pressed="true">Staf AI Anda · SME</button><button type="button" data-view="b" aria-pressed="false">Program sekolah</button></div>
+      <div class="split" data-pane="a">
         <div class="detail">
           <div class="tags"><span class="tag">Program 1 hari · online</span><span class="tag">Kolaborasi</span></div>
           <h3>Staf AI Anda, Siap Bekerja Esok: Bina Sendiri dalam 1 Hari</h3>
@@ -524,6 +533,26 @@ h1,h2,h3,p{margin:0}
             <div data-panel="o5" hidden><p class="k">Staf AI · Marketing</p><p>Contoh tugasan: draf content dan ringkaskan prestasi iklan.</p></div>
           </div>
         </div>
+      </div>
+      <div class="split" data-pane="b" hidden>
+        <div class="detail">
+          <div class="tags"><span class="tag">Program perintis · sekolah</span><span class="tag">4 bulan</span></div>
+          <h3>AI Content &amp; Digital Skill</h3>
+          <p>Program perintis di sekolah untuk pelajar aliran TVET: guna AI untuk hasilkan content, video dan kemahiran digital yang boleh jadi servis dan sumber pendapatan. Sesi mingguan 2 jam, berjalan selama 4 bulan.</p>
+          <div class="chips"><span>ChatGPT</span><span>Canva</span><span>CapCut</span><span>ElevenLabs</span></div>
+        </div>
+        <div class="detail">
+          <p class="prompt">Silibus 6 fasa</p>
+          <ol class="phases">
+            <li><b>01</b>Asas AI &amp; penggunaan</li>
+            <li><b>02</b>Content creation</li>
+            <li><b>03</b>AI video content</li>
+            <li><b>04</b>Skill praktikal &amp; servis</li>
+            <li><b>05</b>Monetisasi</li>
+            <li><b>06</b>Mini project &amp; pembentangan</li>
+          </ol>
+        </div>
+      </div>
       </div>
       <button class="next" type="button" data-go="4">Seterusnya: Produk sendiri <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
     </div>
