@@ -174,6 +174,15 @@ h1,h2,h3,p{margin:0}
 .cta-row{display:flex;flex-wrap:wrap;gap:10px}
 .div-en{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 
+/* Case study story */
+.story{margin:0;display:grid;gap:10px}
+.story div{display:grid;gap:3px;padding-left:14px;border-left:2px solid var(--hair)}
+.story div.res{border-left-color:var(--accent)}
+.story dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.story dd{margin:0;color:var(--soft)}
+.wa-ctx{align-self:flex-start;background:#25d366;color:#04140a}
+.wa-ctx svg{width:18px;height:18px}
+
 /* Client testimonial */
 .quote{margin:0;padding:14px 16px;border-left:3px solid var(--accent);border-radius:0 12px 12px 0;background:rgba(10,6,16,.32);display:grid;gap:8px}
 .quote p{color:var(--cream);font-size:15px;line-height:1.55}
@@ -447,13 +456,14 @@ h1,h2,h3,p{margin:0}
 <div class="detail">
 <div class="tags"><span class="tag live">Live</span><span class="tag"><span data-en="Car air-conditioning workshop · Seremban">Bengkel aircond kereta · Seremban</span></span></div>
 <h3>DR EKON</h3>
-<p><span data-en="A new website replacing a slow Google Sites page, with a booking system. Customers pick a slot, the booking arrives on WhatsApp with a reference number, and the admin tracks everything in a dashboard.">Website baru ganti Google Sites yang lambat, lengkap dengan sistem booking. Pelanggan pilih slot, booking masuk WhatsApp bersama nombor rujukan, dan admin pantau semuanya dalam dashboard.</span></p>
+<dl class="story"><div><dt><span data-en="Challenge">Cabaran</span></dt><dd><span data-en="Bookings were scattered. The owner handled everything alone while customers kept increasing, and the old Google Sites page was slow.">Booking berterabur. Owner urus semuanya seorang diri sementara pelanggan makin ramai, dan website lama di Google Sites lambat.</span></dd></div><div><dt><span data-en="Solution">Penyelesaian</span></dt><dd><span data-en="A new website with a booking system. Customers pick a slot, the booking arrives on WhatsApp and email with a reference number, and everything is recorded in an admin dashboard.">Website baru dengan sistem booking. Pelanggan pilih slot, booking masuk WhatsApp dan email bersama nombor rujukan, dan semuanya direkod dalam dashboard admin.</span></dd></div><div class="res"><dt><span data-en="Result">Hasil</span></dt><dd><span data-en="All bookings are now under control. A clerk manages and tracks them through the system, so it no longer depends on the owner alone. The workshop has since moved to larger premises.">Semua booking kini terkawal. Seorang kerani urus dan pantau booking melalui sistem, jadi tak lagi bergantung pada owner seorang. Bengkel kini dah berpindah ke premis yang lebih besar.</span></dd></div></dl>
 <div class="chips"><span>Website</span><span><span data-en="WhatsApp booking">Booking WhatsApp</span></span><span><span data-en="Admin dashboard">Dashboard admin</span></span></div>
 <blockquote class="quote">
 <p>Setakat ini ape yg aku guna tentang system ni sgt2 membantu utk mudah kan pelanggan dan mudah kan keje aku. Siap dan setiap booking masuk email dan masuk pade wasap aku 😍</p>
 <cite><b>★★★★★</b> <span data-en="DR EKON · Google review (original in Malay)">DR EKON · Review Google</span></cite>
 </blockquote>
 <a class="ext" href="https://dr-ekon.my" rel="noopener" target="_blank">dr-ekon.my <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a class="btn wa-ctx" href="https://wa.me/60169696891?text=Salam%2C%20saya%20tengok%20projek%20DR%20EKON%20di%20multirich.my.%20Saya%20berminat%20dengan%20sistem%20booking%20untuk%20bisnes%20saya." data-en-href="https://wa.me/60169696891?text=Hi%2C%20I%20saw%20the%20DR%20EKON%20project%20on%20multirich.my.%20I%27m%20interested%20in%20a%20booking%20system%20for%20my%20business." rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-en="Want a booking system like this?">Nak sistem booking macam ni?</span></a>
 </div>
 <div class="views" data-views="">
 <div class="vtabs"><button aria-pressed="true" class="sel" data-view="a" type="button">Website</button><button aria-pressed="false" data-view="b" type="button"><span data-en="Admin dashboard">Dashboard admin</span></button></div>
@@ -475,6 +485,7 @@ h1,h2,h3,p{margin:0}
 <p><span data-en="An online store selling coffee beans direct to customers: online payment, a customer database and delivery, with an admin dashboard to track orders.">Kedai online untuk jual biji kopi terus kepada pelanggan: bayar online, database pelanggan dan penghantaran, dengan dashboard admin untuk pantau pesanan.</span></p>
 <div class="chips"><span><span data-en="Online store">Kedai online</span></span><span>FPX &amp; DuitNow</span><span><span data-en="Customer database">Database pelanggan</span></span><span><span data-en="Admin dashboard">Dashboard admin</span></span></div>
 <a class="ext" href="https://heetamcoffroastery.com" rel="noopener" target="_blank">heetamcoffroastery.com <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a class="btn wa-ctx" href="https://wa.me/60169696891?text=Salam%2C%20saya%20tengok%20projek%20Heetam%20Coffee%20di%20multirich.my.%20Saya%20berminat%20nak%20buat%20kedai%20online%20untuk%20bisnes%20saya." data-en-href="https://wa.me/60169696891?text=Hi%2C%20I%20saw%20the%20Heetam%20Coffee%20project%20on%20multirich.my.%20I%27m%20interested%20in%20an%20online%20store%20for%20my%20business." rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-en="Want an online store like this?">Nak kedai online macam ni?</span></a>
 </div>
 <div class="views" data-views="">
 <div class="vtabs"><button aria-pressed="true" class="sel" data-view="a" type="button"><span data-en="Online store">Kedai online</span></button><button aria-pressed="false" data-view="b" type="button"><span data-en="Admin dashboard">Dashboard admin</span></button></div>
@@ -496,6 +507,7 @@ h1,h2,h3,p{margin:0}
 <p><span data-en="A subscription app where students watch class recordings, join the community and get notices for the monthly Zoom class. Built simple for older users, with an admin dashboard to track students and subscriptions.">App langganan untuk pelajar tonton rakaman kelas, sertai komuniti dan dapat notis kelas Zoom bulanan. Dibuat ringkas untuk pengguna berumur, dengan dashboard admin untuk pantau pelajar dan langganan.</span></p>
 <div class="chips"><span><span data-en="Subscription app">App langganan</span></span><span><span data-en="Class videos">Video kelas</span></span><span><span data-en="Online payments">Bayaran online</span></span><span><span data-en="Admin dashboard">Dashboard admin</span></span></div>
 <a class="ext" href="https://baitalsalihin.com" rel="noopener" target="_blank">baitalsalihin.com <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a class="btn wa-ctx" href="https://wa.me/60169696891?text=Salam%2C%20saya%20tengok%20projek%20Madrasah%20Online%20di%20multirich.my.%20Saya%20berminat%20nak%20buat%20app%20langganan." data-en-href="https://wa.me/60169696891?text=Hi%2C%20I%20saw%20the%20Madrasah%20Online%20project%20on%20multirich.my.%20I%27m%20interested%20in%20a%20subscription%20app." rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-en="Want a subscription app like this?">Nak app langganan macam ni?</span></a>
 </div>
 <div class="views" data-views="">
 <div class="vtabs"><button aria-pressed="true" class="sel" data-view="a" type="button"><span data-en="Student app">App pelajar</span></button><button aria-pressed="false" data-view="b" type="button"><span data-en="Admin dashboard">Dashboard admin</span></button></div>
@@ -517,6 +529,7 @@ h1,h2,h3,p{margin:0}
 <p><span data-en="Marketing and sales for skills courses such as skincare, perfumery, soap and detergent: ads, sales pages and participant registration.">Marketing dan jualan untuk kursus kemahiran seperti skincare, perfumery, sabun dan detergen: iklan, sales page dan pendaftaran peserta.</span></p>
 <div class="chips"><span>FB Ads</span><span>Sales page</span><span><span data-en="Participant registration">Pendaftaran peserta</span></span></div>
 <a class="ext" href="https://akademicoe.info" rel="noopener" target="_blank">akademicoe.info <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a class="btn wa-ctx" href="https://wa.me/60169696891?text=Salam%2C%20saya%20tengok%20projek%20Akademi%20COE%20di%20multirich.my.%20Saya%20nak%20tanya%20pasal%20servis%20marketing%20kursus." data-en-href="https://wa.me/60169696891?text=Hi%2C%20I%20saw%20the%20Akademi%20COE%20project%20on%20multirich.my.%20I%27d%20like%20to%20ask%20about%20course%20marketing%20services." rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-en="Want to fill your training classes?">Nak isi kelas kursus anda?</span></a>
 </div>
 <div class="views">
 <div class="phone">
@@ -629,7 +642,8 @@ h1,h2,h3,p{margin:0}
 </div>
 <div aria-live="polite" class="panel">
 <div class="case" data-panel="p1">
-<div class="detail"><div class="tags"><span class="tag live">Live</span><span class="tag"><span data-en="Education">Pendidikan</span></span></div><h3>Numerix</h3><p><span data-en="An AI maths tutor for Form 1, 2 and 3 students.">Tutor AI khas Matematik untuk pelajar Tingkatan 1, 2 dan 3.</span></p><a class="ext" href="https://numerix.my" rel="noopener" target="_blank">numerix.my <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+<div class="detail"><div class="tags"><span class="tag live">Live</span><span class="tag"><span data-en="Education">Pendidikan</span></span></div><h3>Numerix</h3><p><span data-en="An AI maths tutor for Form 1, 2 and 3 students.">Tutor AI khas Matematik untuk pelajar Tingkatan 1, 2 dan 3.</span></p><a class="ext" href="https://numerix.my" rel="noopener" target="_blank">numerix.my <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn wa-ctx" href="https://wa.me/60169696891?text=Salam%2C%20saya%20tengok%20Barista%20Entrepreneur%20Program%20di%20multirich.my.%20Saya%20nak%20tanya%20pasal%20marketing%20dan%20pendaftaran%20peserta%20untuk%20program%20saya." data-en-href="https://wa.me/60169696891?text=Hi%2C%20I%20saw%20the%20Barista%20Entrepreneur%20Program%20on%20multirich.my.%20I%27d%20like%20to%20ask%20about%20marketing%20and%20registration%20for%20my%20programme." rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-en="Want to promote your programme?">Nak promosi program anda?</span></a>
+</div>
 <div class="views">
 <div class="phone">
 <div class="phone-bar"><i></i><span>numerix.my</span></div>
