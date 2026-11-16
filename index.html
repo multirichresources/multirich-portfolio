@@ -183,6 +183,24 @@ h1,h2,h3,p{margin:0}
 .wa-ctx{align-self:flex-start;background:#25d366;color:#04140a}
 .wa-ctx svg{width:18px;height:18px}
 
+/* Enquiry form */
+.enq{display:flex;flex-direction:column;gap:14px}
+.ftabs{align-self:flex-start;flex-wrap:wrap}
+.fhint{font-size:14px;color:var(--soft)}
+.fgrid{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.fgrid{grid-template-columns:1fr 1fr}.f.wide{grid-column:1/-1}}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f label{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--soft)}
+.f input,.f select,.f textarea{width:100%;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--hair);background:rgba(10,6,16,.45);color:var(--cream);font:inherit;font-size:16px}
+.f textarea{resize:vertical;min-height:110px}
+.f select option{background:#1a1208;color:var(--cream)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:transparent}
+.f [aria-invalid="true"]{border-color:#ff8f7a}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fmsg{font-size:14px;min-height:1.4em}
+.fmsg.ok{color:#b8ffb0}.fmsg.err{color:#ffb4a6}
+#f-submit[disabled]{opacity:.6;cursor:progress}
+
 /* Client testimonial */
 .quote{margin:0;padding:14px 16px;border-left:3px solid var(--accent);border-radius:0 12px 12px 0;background:rgba(10,6,16,.32);display:grid;gap:8px}
 .quote p{color:var(--cream);font-size:15px;line-height:1.55}
@@ -686,6 +704,31 @@ h1,h2,h3,p{margin:0}
 <h2 class="title"><span data-en="Let's build.">Jom bina.</span><span aria-hidden="true" class="cur"></span></h2>
 </div>
 <p class="lead"><span data-en="Have a project in mind? Let's discuss how digital technology and AI can help your business or organisation. With">Ada projek dalam fikiran? Jom bincang bagaimana teknologi digital dan AI boleh bantu bisnes atau organisasi anda. Dengan</span> <b>MULTIRICH RESOURCES</b><span data-en=", you deal directly with the person who does the work.">, anda berurusan terus dengan orang yang buat kerja.</span></p>
+<form class="panel enq" id="enq" novalidate>
+<div class="vtabs ftabs" role="group" aria-label="Jenis borang" data-en-aria-label="Form type">
+<button type="button" class="sel" data-ftype="enquiry" aria-pressed="true"><span data-en="Project enquiry">Enquiry projek</span></button>
+<button type="button" data-ftype="proposal" aria-pressed="false"><span data-en="Request a formal proposal">Minta proposal rasmi</span></button>
+</div>
+<p class="fhint" data-only="proposal" hidden><span data-en="For companies, government agencies and institutions that need a written proposal.">Untuk syarikat, agensi kerajaan dan institusi yang perlukan proposal bertulis.</span></p>
+<div class="fgrid">
+<div class="f"><label for="f-name"><span data-en="Full name">Nama penuh</span> *</label><input id="f-name" name="name" autocomplete="name" required maxlength="120"></div>
+<div class="f"><label for="f-company"><span data-en="Company / organisation">Syarikat / organisasi</span><span class="req" data-only="proposal" hidden> *</span></label><input id="f-company" name="company" autocomplete="organization" maxlength="160"></div>
+<div class="f" data-only="proposal" hidden><label for="f-orgtype"><span data-en="Organisation type">Jenis organisasi</span> *</label><select id="f-orgtype" name="orgtype">
+<option value="" data-en="Choose">Pilih</option><option value="Syarikat swasta" data-en="Private company">Syarikat swasta</option><option value="Agensi kerajaan" data-en="Government agency">Agensi kerajaan</option><option value="GLC" data-en="GLC">GLC</option><option value="Institusi pendidikan" data-en="Educational institution">Institusi pendidikan</option><option value="Pusat latihan" data-en="Training centre">Pusat latihan</option><option value="Lain-lain" data-en="Other">Lain-lain</option></select></div>
+<div class="f"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+<div class="f"><label for="f-phone"><span data-en="Phone number">No. telefon</span> *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" inputmode="tel"></div>
+<div class="f"><label for="f-service"><span data-en="Service required">Servis diperlukan</span> *</label><select id="f-service" name="service" required>
+<option value="" data-en="Choose">Pilih</option><option value="Penyelesaian Digital (website, sistem, app)" data-en="Digital Solutions (website, system, app)">Penyelesaian Digital (website, sistem, app)</option><option value="Pemasaran Digital" data-en="Digital Marketing">Pemasaran Digital</option><option value="Penyelesaian AI" data-en="AI Solutions">Penyelesaian AI</option><option value="Latihan & Pembangunan" data-en="Training & Development">Latihan & Pembangunan</option><option value="Belum pasti" data-en="Not sure yet">Belum pasti</option></select></div>
+<div class="f"><label for="f-budget"><span data-en="Estimated budget">Anggaran bajet</span></label><select id="f-budget" name="budget">
+<option value="" data-en="Choose">Pilih</option><option value="Bawah RM1,000" data-en="Under RM1,000">Bawah RM1,000</option><option value="RM1,000 – RM5,000" data-en="RM1,000 – RM5,000">RM1,000 – RM5,000</option><option value="RM5,000 – RM20,000" data-en="RM5,000 – RM20,000">RM5,000 – RM20,000</option><option value="Lebih RM20,000" data-en="Over RM20,000">Lebih RM20,000</option><option value="Belum pasti" data-en="Not sure yet">Belum pasti</option></select></div>
+<div class="f" data-only="proposal" hidden><label for="f-timeline"><span data-en="When to start">Tempoh mula</span></label><select id="f-timeline" name="timeline">
+<option value="" data-en="Choose">Pilih</option><option value="Segera (dalam 1 bulan)" data-en="Soon (within 1 month)">Segera (dalam 1 bulan)</option><option value="1 – 3 bulan" data-en="1 – 3 months">1 – 3 bulan</option><option value="3 – 6 bulan" data-en="3 – 6 months">3 – 6 bulan</option><option value="Belum ditetapkan" data-en="Not decided">Belum ditetapkan</option></select></div>
+<div class="f wide"><label for="f-message"><span data-en="Project description">Penerangan projek</span> *</label><textarea id="f-message" name="message" rows="4" required maxlength="2000" placeholder="Ceritakan ringkas apa yang anda perlukan." data-en-placeholder="Briefly describe what you need."></textarea></div>
+<div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+</div>
+<div class="acts"><button class="btn" type="submit" id="f-submit"><span data-en="Send enquiry" data-only="enquiry">Hantar enquiry</span><span data-en="Request proposal" data-only="proposal" hidden>Minta proposal</span></button></div>
+<p class="fmsg" id="f-msg" role="status" aria-live="polite"></p>
+</form>
 <div class="panel contacts">
 <div>
 <p class="prompt">whatsapp</p>
@@ -718,7 +761,7 @@ h1,h2,h3,p{margin:0}
       if(e.dataset.ms===undefined) e.dataset.ms=e.textContent;
       e.textContent=LANG==='en'?e.dataset.en:e.dataset.ms;
     });
-    ['aria-label','alt','href'].forEach(function(a){
+    ['aria-label','alt','href','placeholder'].forEach(function(a){
       [].forEach.call(document.querySelectorAll('[data-en-'+a+']'),function(e){
         if(!e.hasAttribute('data-ms-'+a)) e.setAttribute('data-ms-'+a,e.getAttribute(a)||'');
         e.setAttribute(a,e.getAttribute(LANG==='en'?'data-en-'+a:'data-ms-'+a));
@@ -845,6 +888,48 @@ h1,h2,h3,p{margin:0}
     else if(cur===2&&e.key==='ArrowRight'){work._step(1);}
     else if(cur===2&&e.key==='ArrowLeft'){work._step(-1);}
   });
+
+  // Enquiry / proposal form
+  var ENQ_URL='';
+  var enq=document.getElementById('enq');
+  if(enq){
+    var ftype='enquiry', fmsg=document.getElementById('f-msg'), fbtn=document.getElementById('f-submit');
+    var setType=function(t){
+      ftype=t;
+      [].forEach.call(enq.querySelectorAll('[data-ftype]'),function(b){var on=b.getAttribute('data-ftype')===t;b.classList.toggle('sel',on);b.setAttribute('aria-pressed',on?'true':'false');});
+      [].forEach.call(enq.querySelectorAll('[data-only]'),function(el){el.hidden=el.getAttribute('data-only')!==t;});
+      document.getElementById('f-company').required=(t==='proposal');
+      document.getElementById('f-orgtype').required=(t==='proposal');
+      fmsg.textContent=''; fmsg.className='fmsg';
+    };
+    [].forEach.call(enq.querySelectorAll('[data-ftype]'),function(b){b.addEventListener('click',function(){setType(b.getAttribute('data-ftype'));});});
+    enq.addEventListener('submit',function(e){
+      e.preventDefault();
+      var bad=null;
+      [].forEach.call(enq.querySelectorAll('input,select,textarea'),function(el){
+        if(el.name==='website') return;
+        var ok=el.checkValidity()&&!(el.required&&!String(el.value).trim());
+        el.setAttribute('aria-invalid',ok?'false':'true');
+        if(!ok&&!bad) bad=el;
+      });
+      if(bad){fmsg.className='fmsg err';fmsg.textContent=T('Sila lengkapkan ruangan bertanda * dengan betul.','Please complete the fields marked * correctly.');bad.focus();return;}
+      if(!ENQ_URL){fmsg.className='fmsg err';fmsg.textContent=T('Borang belum aktif. Sila WhatsApp 016-969 6891.','The form is not active yet. Please WhatsApp 016-969 6891.');return;}
+      var data=new URLSearchParams();
+      [].forEach.call(enq.querySelectorAll('input,select,textarea'),function(el){
+        if(el.name&&!el.closest('[hidden]')) data.append(el.name,el.value.trim());
+      });
+      data.append('type',ftype); data.append('lang',LANG); data.append('website',document.getElementById('f-website').value);
+      fbtn.disabled=true; fmsg.className='fmsg'; fmsg.textContent=T('Menghantar...','Sending...');
+      fetch(ENQ_URL,{method:'POST',mode:'no-cors',body:data}).then(function(){
+        enq.reset(); setType(ftype);
+        fmsg.className='fmsg ok';
+        fmsg.textContent=ftype==='proposal'?T('Terima kasih! Permintaan proposal anda dah diterima. Kami akan hubungi anda secepat mungkin.','Thank you! Your proposal request has been received. We will contact you as soon as possible.'):T('Terima kasih! Enquiry anda dah diterima. Kami akan hubungi anda secepat mungkin.','Thank you! Your enquiry has been received. We will contact you as soon as possible.');
+      }).catch(function(){
+        fmsg.className='fmsg err';
+        fmsg.textContent=T('Tak dapat hantar sekarang. Sila cuba lagi atau WhatsApp 016-969 6891.','Could not send right now. Please try again or WhatsApp 016-969 6891.');
+      }).then(function(){fbtn.disabled=false;});
+    });
+  }
 
   // Copy email
   var note=document.getElementById('note');
