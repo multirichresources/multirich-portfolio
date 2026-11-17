@@ -102,6 +102,61 @@
   .wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;
     padding:14px 24px;border-radius:999px;box-shadow:0 8px 24px rgba(37,211,102,.4)}
   .foot{color:rgba(255,255,255,.65);text-align:center;font-size:12px;margin-top:22px;line-height:1.6}
+
+  /* ====== LANDING ====== */
+  html{scroll-behavior:smooth}
+  .hero-desc{max-width:560px;margin:14px auto 0;color:#cfe3ff;font-size:15px;line-height:1.6}
+  .cta-top{display:inline-block;margin-top:22px;text-decoration:none;color:var(--ink);font-weight:800;font-style:italic;font-size:20px;
+    padding:14px 34px;border-radius:999px;background:linear-gradient(180deg,#ffd84a,var(--yellow2));box-shadow:0 10px 30px rgba(255,176,0,.45)}
+  .lp{color:#fff;margin:34px 0}
+  .lp h2.t{font-size:clamp(22px,5vw,28px);font-weight:800;font-style:italic;line-height:1.25;text-align:center;margin-bottom:18px}
+  .lp h2.t em{color:var(--yellow);font-style:italic}
+  .glass{background:rgba(255,255,255,.07);border:1px solid rgba(53,208,255,.3);border-radius:18px;padding:18px}
+  .pain li{list-style:none;padding:10px 0 10px 34px;position:relative;border-bottom:1px dashed rgba(255,255,255,.15);font-size:15px;color:#e6efff}
+  .pain li:last-child{border:0}
+  .pain li:before{content:"✕";position:absolute;left:4px;top:9px;width:22px;height:22px;border-radius:50%;background:rgba(229,72,77,.2);color:#ff8a8d;font-size:12px;display:grid;place-items:center;font-weight:800}
+  .staff{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.staff{grid-template-columns:1fr}}
+  .st{border-radius:18px;padding:16px;border:1px solid rgba(255,255,255,.25)}
+  .st b{display:block;font-size:17px;font-style:italic;margin:6px 0 4px}
+  .st p{font-size:13.5px;color:rgba(255,255,255,.88);line-height:1.5}
+  .st .ic{font-size:26px}
+  .s1{background:linear-gradient(135deg,rgba(30,110,255,.55),rgba(10,40,120,.6))}
+  .s2{background:linear-gradient(135deg,rgba(20,170,110,.55),rgba(6,70,60,.6))}
+  .s3{background:linear-gradient(135deg,rgba(255,130,20,.6),rgba(120,50,10,.6))}
+  .s4{background:linear-gradient(135deg,rgba(150,70,240,.6),rgba(60,20,120,.6))}
+  .ceo{margin-top:14px;text-align:center;font-size:14px;color:#cfe3ff;background:rgba(255,201,40,.12);border:1px solid rgba(255,201,40,.4);border-radius:14px;padding:12px}
+  .ceo b{color:var(--yellow)}
+  .chk li{list-style:none;padding:9px 0 9px 34px;position:relative;font-size:15px;color:#e6efff}
+  .chk li:before{content:"✓";position:absolute;left:2px;top:8px;width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+  .mods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.mods{grid-template-columns:1fr}}
+  .mods h3{font-size:14px;color:var(--yellow);font-weight:700;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase}
+  .mod{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-size:14px;color:#e6efff;line-height:1.4}
+  .mod i{font-style:normal;flex-shrink:0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:linear-gradient(135deg,var(--cyan),var(--blue))}
+  .mod small{display:block;color:#9fbde6;font-size:12px}
+  .bonus{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.bonus{grid-template-columns:1fr}}
+  .bonus div{text-align:center}
+  .bonus .ic{font-size:30px}
+  .bonus b{display:block;margin:6px 0 4px;font-size:16px}
+  .bonus p{font-size:13px;color:#cfe3ff}
+  .who{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+  @media(max-width:560px){.who{grid-template-columns:1fr}}
+  .who div{font-size:14px;color:#e6efff}
+  .who .ic{font-size:28px;display:block;margin-bottom:4px}
+  .nocode{margin-top:12px;text-align:center;font-size:14px;color:#fff;background:rgba(34,169,91,.18);border:1px solid rgba(34,169,91,.5);border-radius:14px;padding:12px}
+  details{background:rgba(255,255,255,.07);border:1px solid rgba(53,208,255,.25);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  summary{cursor:pointer;padding:14px 44px 14px 16px;font-weight:600;font-size:14.5px;position:relative;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";position:absolute;right:16px;top:10px;font-size:22px;color:var(--yellow);font-weight:700}
+  details[open] summary:after{content:"–"}
+  details p{padding:0 16px 14px;font-size:14px;color:#cfe3ff;line-height:1.6}
+  .form-h{color:#fff;text-align:center;margin:40px 0 16px}
+  .form-h h2{font-size:clamp(24px,6vw,32px);font-weight:800;font-style:italic}
+  .form-h p{color:#cfe3ff;font-size:14px;margin-top:6px}
+  .ask{text-align:center;color:#fff;margin-top:30px}
+  .ask p{margin-bottom:12px;font-weight:600}
 </style>
 </head>
 <body>
@@ -112,13 +167,107 @@
     <h1>Staf <span class="ai">AI</span> Anda,</h1>
     <div class="ribbon"><b>Siap Bekerja Esok</b></div>
     <div class="sub">Bina Sendiri dalam 1 Hari</div>
+    <p class="hero-desc">Latihan praktikal untuk pemilik bisnes, pengurus dan eksekutif yang ingin membina sistem Staf AI untuk operasi perniagaan secara sistematik — tanpa perlu kemahiran coding.</p>
     <div class="facts">
       <div class="fact"><b>Tarikh</b>10 &amp; 19 Dis 2026</div>
       <div class="fact"><b>Format</b>Atas Talian (Zoom)</div>
       <div class="fact"><b>Tempoh</b>1 Hari (7 Jam)</div>
       <div class="fact"><b>Yuran</b>RM500 seorang<br>(25 Peserta / Batch)</div>
     </div>
+    <a class="cta-top" href="#daftar">Daftar Sekarang ›</a>
   </header>
+
+  <section class="lp">
+    <h2 class="t">Bisnes jalan, tapi <em>semua kerja</em> atas bahu anda?</h2>
+    <ul class="glass pain">
+      <li>Kerja admin berulang setiap hari — rekod, dokumen, susun data</li>
+      <li>Prospek masuk tapi tak sempat follow up, akhirnya hilang</li>
+      <li>Nak buat content marketing, tapi idea dan masa tak cukup</li>
+      <li>Nak ambil staf baru, tapi kos gaji tinggi</li>
+      <li>Dah cuba guna AI, tapi setakat tanya soalan — tak jadi sistem</li>
+    </ul>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Bina <em>4 Staf AI</em> untuk Bisnes Anda</h2>
+    <div class="staff">
+      <div class="st s1"><span class="ic">👥</span><b>Ketua Staf AI</b><p>Urus, koordinasi dan pantau kerja semua staf.</p></div>
+      <div class="st s2"><span class="ic">💻</span><b>Staf Admin AI</b><p>Urus dokumen, rekod dan tugasan harian.</p></div>
+      <div class="st s3"><span class="ic">📈</span><b>Staf Jualan AI</b><p>Urus prospek, susulan pelanggan dan laporan jualan.</p></div>
+      <div class="st s4"><span class="ic">📣</span><b>Staf Pemasaran AI</b><p>Sediakan idea, draf konten dan pelan pemasaran.</p></div>
+    </div>
+    <div class="ceo">Anda kekal sebagai <b>CEO</b>. Setiap kerja penting perlu kelulusan anda sebelum dilaksanakan.</div>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Apa Yang Anda <em>Bawa Balik</em> Selepas 1 Hari</h2>
+    <ul class="glass chk">
+      <li>Sistem 4 Staf AI yang dah berfungsi untuk bisnes anda</li>
+      <li>Pejabat Digital yang tersusun dalam Google Sheets</li>
+      <li>Otak Bisnes — pangkalan pengetahuan supaya AI faham bisnes anda</li>
+      <li>Command Center — papan pemuka untuk pantau kerja &amp; prestasi</li>
+      <li>Rutin operasi mingguan yang mudah diikuti</li>
+      <li>Amalan AI yang selamat, beretika &amp; mematuhi PDPA</li>
+    </ul>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Kandungan Program <em>(10 Modul)</em></h2>
+    <div class="mods">
+      <div class="glass">
+        <h3>☀️ Sesi Pagi</h3>
+        <div class="mod"><i>1</i><span>Konsep Staf AI &amp; Tadbir Urus AI</span></div>
+        <div class="mod"><i>2</i><span>Otak Bisnes<small>Pangkalan Pengetahuan</small></span></div>
+        <div class="mod"><i>3</i><span>Pejabat Digital Google Sheets</span></div>
+        <div class="mod"><i>4</i><span>Membina Empat Staf AI</span></div>
+        <div class="mod"><i>5</i><span>Staf Pemasaran AI<small>Penjanaan Konten</small></span></div>
+      </div>
+      <div class="glass">
+        <h3>🌤️ Sesi Petang</h3>
+        <div class="mod"><i>6</i><span>Automasi Aliran Kerja<small>Dengan Kelulusan Pemilik</small></span></div>
+        <div class="mod"><i>7</i><span>Staf Admin &amp; Staf Jualan AI<small>Rekod &amp; Susulan Pelanggan</small></span></div>
+        <div class="mod"><i>8</i><span>Ketua Staf AI<small>Koordinasi &amp; Laporan</small></span></div>
+        <div class="mod"><i>9</i><span>Command Center<small>Papan Pemuka Perniagaan</small></span></div>
+        <div class="mod"><i>10</i><span>Rutin Operasi Mingguan &amp; Keselamatan Data</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Bonus <em>Peserta</em></h2>
+    <div class="bonus">
+      <div class="glass"><span class="ic">🎥</span><b>Rakaman Kelas</b><p>Ulang tonton bila-bila masa untuk ulang kaji.</p></div>
+      <div class="glass"><span class="ic">💬</span><b>Group WhatsApp Peserta</b><p>Sokongan &amp; perkongsian selepas kelas.</p></div>
+    </div>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Sesuai <em>Untuk</em></h2>
+    <div class="glass who">
+      <div><span class="ic">🏪</span>Pemilik Perniagaan<br><small style="color:#9fbde6">F&amp;B, perkhidmatan, runcit, pendidikan, B2B</small></div>
+      <div><span class="ic">🧑‍💼</span>Pengurus &amp;<br>Ketua Jabatan</div>
+      <div><span class="ic">💼</span>Eksekutif Pemasaran,<br>Jualan &amp; Pentadbiran</div>
+    </div>
+    <div class="nocode"><b>Tak perlu pandai IT atau coding.</b> Kalau boleh guna WhatsApp dan Gmail, anda boleh ikut.</div>
+  </section>
+
+  <section class="lp">
+    <h2 class="t">Soalan <em>Lazim</em></h2>
+    <details><summary>Saya tak pandai IT, boleh ikut ke?</summary><p>Boleh. Program ini direka untuk peserta bukan teknikal. Semua langkah ditunjukkan satu per satu.</p></details>
+    <details><summary>Apa yang perlu saya sediakan?</summary><p>Laptop atau komputer (bukan telefon), akaun Google (Gmail), langganan Claude Pro, internet yang stabil dan aplikasi Zoom.</p></details>
+    <details><summary>Kenapa perlu langganan Claude Pro?</summary><p>Claude ialah AI yang akan menjadi "otak" kepada Staf AI anda. Sistem yang dibina dalam kelas memerlukan ciri-ciri Claude Pro. Sila langgan sebelum hari kelas — panduan langganan akan dikongsi selepas pendaftaran.</p></details>
+    <details><summary>Kelas ini live atau rakaman?</summary><p>Kelas dijalankan secara live melalui Zoom. Peserta juga akan mendapat rakaman kelas untuk ulang kaji.</p></details>
+    <details><summary>Kalau ada soalan selepas kelas?</summary><p>Anda akan dimasukkan ke group WhatsApp peserta untuk bertanya dan berkongsi selepas kelas.</p></details>
+    <details><summary>Macam mana nak tuntut HRDCorp?</summary><p>Pilih "Tuntut HRDCorp" dalam borang dan isi maklumat syarikat. Pasukan kami akan menghubungi PIC HR syarikat untuk urusan permohonan grant. Permohonan mesti dibuat sebelum tarikh latihan.</p></details>
+    <details><summary>Boleh tukar batch selepas daftar?</summary><p>Boleh, tertakluk kepada kekosongan tempat dalam batch yang dipilih. Hubungi kami melalui WhatsApp sebelum tarikh kelas.</p></details>
+    <details><summary>Ada refund?</summary><p>Yuran yang telah dibayar tidak akan dikembalikan. Walau bagaimanapun, anda boleh memindahkan pendaftaran ke batch lain.</p></details>
+    <details><summary>Kenapa tempat terhad?</summary><p>Setiap batch dihadkan kepada 25 peserta supaya setiap orang mendapat bimbingan semasa membina sistem.</p></details>
+  </section>
+
+  <div class="form-h" id="daftar">
+    <h2>Daftar Sekarang</h2>
+    <p>Isi borang di bawah. Tempat terhad 25 peserta setiap batch.</p>
+  </div>
 
   <main class="card">
     <form id="f" novalidate>
@@ -246,7 +395,7 @@
           <label class="opt"><input type="radio" name="akaun_google" value="Ya" required><span>✅ Ya, ada</span></label>
           <label class="opt"><input type="radio" name="akaun_google" value="Belum"><span>Belum ada</span></label>
         </div>
-        <div class="hint" style="margin-bottom:16px">Kelas menggunakan Google Sheets sebagai Pejabat Digital. Bawa laptop, bukan telefon.</div>
+        <div class="hint" style="margin-bottom:16px">Kelas menggunakan Google Sheets &amp; Claude Pro. Gunakan laptop, bukan telefon.</div>
 
         <label class="lb" for="harapan">Soalan / harapan anda untuk kelas ini <span style="color:var(--muted);font-weight:400">(pilihan)</span></label>
         <textarea id="harapan" name="harapan" placeholder="Cth: Saya nak AI tolong follow-up pelanggan secara automatik"></textarea>
@@ -274,6 +423,11 @@
     </div>
   </main>
 
+  <div class="ask">
+    <p>Ada soalan sebelum daftar?</p>
+    <a class="wa" id="wa-ask" href="#" target="_blank" rel="noopener">💬 WhatsApp <span id="ask-tel"></span></a>
+  </div>
+
   <p class="foot">Staf AI Anda · Program Latihan Atas Talian<br>Ada soalan? WhatsApp <span id="foot-tel"></span></p>
 </div>
 
@@ -285,6 +439,8 @@ const WA_DISPLAY = "010-311 5982";
 /* ===================================== */
 
 document.getElementById('foot-tel').textContent = WA_DISPLAY;
+document.getElementById('ask-tel').textContent = WA_DISPLAY;
+document.getElementById('wa-ask').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Salam, saya nak tanya tentang program Staf AI Anda.')}`;
 const f = document.getElementById('f');
 const boxH = document.getElementById('box-hrd'), boxS = document.getElementById('box-sendiri');
 const hrdFields = [...document.querySelectorAll('[data-hrd]')];
