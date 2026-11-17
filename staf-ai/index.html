@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar | Staf AI Anda, Siap Bekerja Esok</title>
+<meta name="description" content="Borang pendaftaran program latihan Staf AI Anda – Bina Sendiri dalam 1 Hari. Atas talian (Zoom), RM500 seorang, HRDCorp Claimable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  /* ====== TETAPAN ====== */
+  :root{
+    --bg1:#03112e; --bg2:#06245c; --blue:#1e8bff; --cyan:#35d0ff;
+    --yellow:#ffc928; --yellow2:#ffb000; --card:rgba(255,255,255,.96);
+    --ink:#0b1b3a; --muted:#5b6b88; --line:#d7e2f3; --ok:#22a95b; --err:#e5484d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);min-height:100vh;
+    background:radial-gradient(1200px 600px at 80% -10%,#0d4fb8 0%,transparent 60%),
+               radial-gradient(900px 500px at -10% 30%,#0a3a8f 0%,transparent 55%),
+               linear-gradient(180deg,var(--bg1),var(--bg2) 60%,var(--bg1));
+}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+
+  /* HERO */
+  .hero{color:#fff;text-align:center;padding:10px 0 26px}
+  .pill{display:inline-block;border:1.5px solid var(--cyan);border-radius:999px;padding:6px 18px;
+    font-weight:700;font-style:italic;font-size:14px;box-shadow:0 0 18px rgba(53,208,255,.35)}
+  .hrd{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0b2a6b;border-radius:10px;
+    padding:6px 12px;font-weight:800;font-size:13px;margin-left:8px;vertical-align:middle}
+  .hrd span{color:var(--err)}
+  h1{font-size:clamp(36px,8vw,56px);font-weight:800;font-style:italic;line-height:1.05;margin-top:16px;letter-spacing:-1px}
+  h1 .ai{background:linear-gradient(180deg,#7fe6ff,#1e8bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ribbon{display:inline-block;background:linear-gradient(90deg,var(--yellow),var(--yellow2));color:var(--ink);
+    font-weight:800;font-style:italic;font-size:clamp(22px,5vw,32px);padding:4px 22px;border-radius:14px;
+    transform:skew(-8deg);margin:10px 0 6px;box-shadow:0 6px 24px rgba(255,190,0,.35)}
+  .ribbon b{display:inline-block;transform:skew(8deg)}
+  .sub{font-weight:700;font-style:italic;font-size:clamp(18px,4vw,24px)}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}
+  .fact{background:rgba(255,255,255,.08);border:1px solid rgba(53,208,255,.35);border-radius:14px;padding:10px 6px;font-size:12px;line-height:1.35}
+  .fact b{display:block;font-size:14px;color:var(--yellow)}
+  @media(max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+  /* CARD */
+  .card{background:var(--card);border-radius:22px;padding:26px 22px;box-shadow:0 20px 60px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.6)}
+  .sec{margin-bottom:26px}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .num{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;
+    background:linear-gradient(135deg,var(--cyan),var(--blue));flex-shrink:0}
+  .sec-h h2{font-size:18px;font-weight:800;font-style:italic;color:#0b2a6b}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .full{grid-column:1/-1}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  label.lb{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+  .req{color:var(--err)}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:4px}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:15px;
+    padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#f7faff;color:var(--ink);transition:.15s}
+  textarea{min-height:90px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(30,139,255,.15)}
+  .invalid{border-color:var(--err)!important;background:#fff5f5!important}
+
+  /* pilihan kad */
+  .opts{display:grid;gap:10px}
+  .opts.c2{grid-template-columns:1fr 1fr}.opts.c4{grid-template-columns:repeat(4,1fr)}.opts.c3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:560px){.opts.c4{grid-template-columns:1fr 1fr}.opts.c3{grid-template-columns:1fr}.opts.c2.stack{grid-template-columns:1fr}}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt span{display:block;border:1.5px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center;
+    font-size:13.5px;font-weight:600;background:#f7faff;cursor:pointer;transition:.15s;height:100%}
+  .opt span small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:2px}
+  .opt input:checked+span{border-color:var(--blue);background:linear-gradient(135deg,#e8f4ff,#d6ebff);color:#0b2a6b;box-shadow:0 0 0 3px rgba(30,139,255,.15)}
+  .opt input:focus-visible+span{outline:2px solid var(--blue)}
+  .group-invalid .opt span{border-color:var(--err)}
+
+  .pay-box{border:1.5px dashed #9cc8ff;border-radius:16px;padding:16px;background:#f2f8ff;margin-top:14px;display:none}
+  .pay-box.show{display:block;animation:fade .25s}
+  .pay-box h3{font-size:14px;font-weight:700;color:#0b2a6b;margin-bottom:10px}
+  .note{font-size:12.5px;color:#334;background:#fff8df;border-left:4px solid var(--yellow2);padding:10px 12px;border-radius:8px;margin-top:12px;line-height:1.5}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+
+  .pdpa{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.5;background:#f7faff;
+    border:1.5px solid var(--line);border-radius:12px;padding:12px}
+  .pdpa input{width:20px;height:20px;margin-top:2px;flex-shrink:0;accent-color:var(--blue)}
+
+  .btn{width:100%;border:0;cursor:pointer;font:inherit;font-weight:800;font-style:italic;font-size:22px;color:var(--ink);
+    padding:16px;border-radius:999px;background:linear-gradient(180deg,#ffd84a,var(--yellow2));
+    box-shadow:0 10px 30px rgba(255,176,0,.45),inset 0 -3px 0 rgba(0,0,0,.12);transition:.15s;margin-top:8px}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:disabled{opacity:.6;cursor:wait;transform:none}
+  .err-msg{display:none;color:var(--err);font-size:13px;font-weight:600;text-align:center;margin-top:10px}
+  .err-msg.show{display:block}
+
+  /* berjaya */
+  .done{display:none;text-align:center;padding:10px 4px}
+  .done.show{display:block;animation:fade .3s}
+  .tick{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#3ddc84,var(--ok));box-shadow:0 10px 30px rgba(34,169,91,.4)}
+  .done h2{font-size:26px;font-weight:800;font-style:italic;color:#0b2a6b}
+  .done p{color:var(--muted);margin:10px 0 18px;line-height:1.6}
+  .wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;
+    padding:14px 24px;border-radius:999px;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+  .foot{color:rgba(255,255,255,.65);text-align:center;font-size:12px;margin-top:22px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="pill">Program Latihan Profesional</span><span class="hrd">HRD<span>CORP</span>&nbsp;CLAIMABLE ✓</span>
+    <h1>Staf <span class="ai">AI</span> Anda,</h1>
+    <div class="ribbon"><b>Siap Bekerja Esok</b></div>
+    <div class="sub">Bina Sendiri dalam 1 Hari</div>
+    <div class="facts">
+      <div class="fact"><b>Tarikh</b>Akan Dimaklumkan</div>
+      <div class="fact"><b>Format</b>Atas Talian (Zoom)</div>
+      <div class="fact"><b>Tempoh</b>1 Hari (7 Jam)</div>
+      <div class="fact"><b>Yuran</b>RM500 seorang<br>(Had 25 Peserta)</div>
+    </div>
+  </header>
+
+  <main class="card">
+    <form id="f" novalidate>
+
+      <!-- A -->
+      <section class="sec">
+        <div class="sec-h"><div class="num">1</div><h2>Maklumat Peserta</h2></div>
+        <div class="grid">
+          <div class="full">
+            <label class="lb" for="nama">Nama Penuh <span class="req">*</span></label>
+            <input type="text" id="nama" name="nama" required placeholder="Seperti dalam kad pengenalan" autocomplete="name">
+            <div class="hint">Nama ini akan dicetak pada sijil penyertaan.</div>
+          </div>
+          <div>
+            <label class="lb" for="telefon">No. Telefon (WhatsApp) <span class="req">*</span></label>
+            <input type="tel" id="telefon" name="telefon" required placeholder="012-345 6789" autocomplete="tel" inputmode="tel">
+          </div>
+          <div>
+            <label class="lb" for="emel">Emel <span class="req">*</span></label>
+            <input type="email" id="emel" name="emel" required placeholder="nama@email.com" autocomplete="email">
+            <div class="hint">Pautan Zoom akan dihantar ke emel ini.</div>
+          </div>
+          <div>
+            <label class="lb" for="jawatan">Jawatan <span class="req">*</span></label>
+            <input type="text" id="jawatan" name="jawatan" required placeholder="Cth: Pemilik / Pengurus Jualan">
+          </div>
+          <div>
+            <label class="lb" for="syarikat">Nama Perniagaan / Syarikat <span class="req">*</span></label>
+            <input type="text" id="syarikat" name="syarikat" required placeholder="Cth: Dapur Kak Yah Enterprise" autocomplete="organization">
+          </div>
+          <div>
+            <label class="lb" for="industri">Jenis Industri <span class="req">*</span></label>
+            <select id="industri" name="industri" required>
+              <option value="">— Pilih —</option>
+              <option>F&amp;B</option><option>Perkhidmatan</option><option>Runcit / E-dagang</option>
+              <option>Pendidikan / Latihan</option><option>B2B / Korporat</option><option>Lain-lain</option>
+            </select>
+          </div>
+          <div>
+            <label class="lb" for="saiz">Bilangan Staf <span class="req">*</span></label>
+            <select id="saiz" name="saiz" required>
+              <option value="">— Pilih —</option>
+              <option>Solo (seorang)</option><option>2–5 orang</option><option>6–20 orang</option><option>21 orang ke atas</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- B -->
+      <section class="sec">
+        <div class="sec-h"><div class="num">2</div><h2>Kaedah Bayaran (RM500 seorang)</h2></div>
+        <div class="opts c2 stack" id="g-bayaran">
+          <label class="opt"><input type="radio" name="bayaran" value="Bayar Sendiri" required><span>💳 Bayar Sendiri<small>Individu / syarikat bayar terus</small></span></label>
+          <label class="opt"><input type="radio" name="bayaran" value="Tuntut HRDCorp"><span>🏢 Tuntut HRDCorp<small>Syarikat berdaftar dengan HRDCorp</small></span></label>
+        </div>
+
+        <div class="pay-box" id="box-sendiri">
+          <div class="note" style="margin-top:0">Butiran bayaran (akaun bank / pautan bayaran) akan dihantar melalui WhatsApp selepas pendaftaran. Tempat disahkan selepas bayaran diterima.</div>
+        </div>
+
+        <div class="pay-box" id="box-hrd">
+          <h3>Maklumat Syarikat untuk Tuntutan HRDCorp</h3>
+          <div class="grid">
+            <div class="full">
+              <label class="lb" for="hrd_syarikat">Nama Syarikat Berdaftar <span class="req">*</span></label>
+              <input type="text" id="hrd_syarikat" name="hrd_syarikat" data-hrd placeholder="Seperti dalam SSM">
+            </div>
+            <div>
+              <label class="lb" for="hrd_ssm">No. Pendaftaran SSM <span class="req">*</span></label>
+              <input type="text" id="hrd_ssm" name="hrd_ssm" data-hrd placeholder="Cth: 202301012345">
+            </div>
+            <div>
+              <label class="lb" for="hrd_mycoid">No. Majikan HRDCorp (MyCoID) <span class="req">*</span></label>
+              <input type="text" id="hrd_mycoid" name="hrd_mycoid" data-hrd placeholder="Rujuk portal eTRiS">
+            </div>
+            <div class="full">
+              <label class="lb" for="hrd_pic">Nama PIC HR / Pegawai Bertanggungjawab <span class="req">*</span></label>
+              <input type="text" id="hrd_pic" name="hrd_pic" data-hrd>
+            </div>
+            <div>
+              <label class="lb" for="hrd_pic_tel">No. Telefon PIC <span class="req">*</span></label>
+              <input type="tel" id="hrd_pic_tel" name="hrd_pic_tel" data-hrd inputmode="tel">
+            </div>
+            <div>
+              <label class="lb" for="hrd_pic_emel">Emel PIC <span class="req">*</span></label>
+              <input type="email" id="hrd_pic_emel" name="hrd_pic_emel" data-hrd>
+            </div>
+          </div>
+          <div class="note">Permohonan grant HRDCorp perlu dibuat oleh pihak syarikat <b>sebelum tarikh latihan</b>. Pasukan kami akan menghubungi PIC untuk dokumen yang diperlukan.</div>
+        </div>
+      </section>
+
+      <!-- C -->
+      <section class="sec">
+        <div class="sec-h"><div class="num">3</div><h2>Persediaan Kelas</h2></div>
+
+        <label class="lb">Bahagian mana anda paling perlukan Staf AI? <span class="req">*</span></label>
+        <div class="opts c4" id="g-fokus" style="margin-bottom:16px">
+          <label class="opt"><input type="radio" name="fokus" value="Admin" required><span>💻 Admin</span></label>
+          <label class="opt"><input type="radio" name="fokus" value="Jualan"><span>📈 Jualan</span></label>
+          <label class="opt"><input type="radio" name="fokus" value="Pemasaran"><span>📣 Pemasaran</span></label>
+          <label class="opt"><input type="radio" name="fokus" value="Semua"><span>👥 Semua</span></label>
+        </div>
+
+        <label class="lb">Tahap penggunaan AI anda sekarang <span class="req">*</span></label>
+        <div class="opts c3" id="g-tahap" style="margin-bottom:16px">
+          <label class="opt"><input type="radio" name="tahap_ai" value="Belum pernah" required><span>Belum pernah guna</span></label>
+          <label class="opt"><input type="radio" name="tahap_ai" value="Kadang-kadang"><span>Kadang-kadang</span></label>
+          <label class="opt"><input type="radio" name="tahap_ai" value="Selalu"><span>Selalu guna</span></label>
+        </div>
+
+        <label class="lb">Ada akaun Google (Gmail) untuk digunakan semasa kelas? <span class="req">*</span></label>
+        <div class="opts c2" id="g-google" style="margin-bottom:6px">
+          <label class="opt"><input type="radio" name="akaun_google" value="Ya" required><span>✅ Ya, ada</span></label>
+          <label class="opt"><input type="radio" name="akaun_google" value="Belum"><span>Belum ada</span></label>
+        </div>
+        <div class="hint" style="margin-bottom:16px">Kelas menggunakan Google Sheets sebagai Pejabat Digital. Bawa laptop, bukan telefon.</div>
+
+        <label class="lb" for="harapan">Soalan / harapan anda untuk kelas ini <span style="color:var(--muted);font-weight:400">(pilihan)</span></label>
+        <textarea id="harapan" name="harapan" placeholder="Cth: Saya nak AI tolong follow-up pelanggan secara automatik"></textarea>
+      </section>
+
+      <div class="pdpa" id="g-pdpa">
+        <input type="checkbox" id="pdpa" name="pdpa" value="Setuju" required>
+        <label for="pdpa">Saya bersetuju maklumat ini digunakan oleh penganjur bagi tujuan pendaftaran, urusan bayaran / tuntutan HRDCorp dan komunikasi berkaitan program ini, selaras dengan Akta Perlindungan Data Peribadi 2010 (PDPA). <span class="req">*</span></label>
+      </div>
+
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+      <button class="btn" type="submit" id="btn">Daftar Sekarang ›</button>
+      <div class="err-msg" id="err">Sila lengkapkan semua ruangan bertanda *</div>
+    </form>
+
+    <div class="done" id="done">
+      <div class="tick"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2>Pendaftaran Diterima!</h2>
+      <p id="done-txt">Terima kasih. Pasukan kami akan menghubungi anda melalui WhatsApp untuk langkah seterusnya.</p>
+      <a class="wa" id="wa" href="#" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+        Sahkan melalui WhatsApp
+      </a>
+    </div>
+  </main>
+
+  <p class="foot">Staf AI Anda · Program Latihan Atas Talian<br>Ada soalan? WhatsApp <span id="foot-tel"></span></p>
+</div>
+
+<script>
+/* ====== TETAPAN — ubah di sini ====== */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZVTl7dTnRvy9hkl5yrJnKVEUMu7D0izHElFF97qFUAJyGo7OB9mXiFVMqoggwzrz8wg/exec"; // URL Web App dari Google Apps Script (berakhir /exec)
+const WA_NUMBER  = "60169696891";                   // nombor WhatsApp penerima (format 60xxxxxxxxx)
+const WA_DISPLAY = "016-969 6891";
+/* ===================================== */
+
+document.getElementById('foot-tel').textContent = WA_DISPLAY;
+const f = document.getElementById('f');
+const boxH = document.getElementById('box-hrd'), boxS = document.getElementById('box-sendiri');
+const hrdFields = [...document.querySelectorAll('[data-hrd]')];
+
+f.addEventListener('change', e => {
+  if (e.target.name === 'bayaran') {
+    const hrd = e.target.value === 'Tuntut HRDCorp';
+    boxH.classList.toggle('show', hrd); boxS.classList.toggle('show', !hrd);
+    hrdFields.forEach(i => i.required = hrd);
+    // isi nama syarikat automatik
+    const s = document.getElementById('syarikat').value, h = document.getElementById('hrd_syarikat');
+    if (hrd && !h.value) h.value = s;
+  }
+  clearMark(e.target);
+});
+f.addEventListener('input', e => clearMark(e.target));
+
+function clearMark(el){
+  el.classList && el.classList.remove('invalid');
+  const g = el.closest && el.closest('.opts, .pdpa'); if (g) g.classList.remove('group-invalid');
+}
+
+function validate(){
+  let ok = true, first = null;
+  const mark = el => { ok = false; if (!first) first = el; };
+  f.querySelectorAll('input[type=text],input[type=email],input[type=tel],select').forEach(el => {
+    if (!el.required) return;
+    let bad = !el.value.trim();
+    if (!bad && el.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+    if (!bad && el.type === 'tel') bad = el.value.replace(/\D/g,'').length < 9;
+    if (bad){ el.classList.add('invalid'); mark(el); }
+  });
+  ['bayaran','fokus','tahap_ai','akaun_google'].forEach(n => {
+    if (!f.querySelector(`input[name="${n}"]:checked`)){
+      const g = f.querySelector(`input[name="${n}"]`).closest('.opts'); g.classList.add('group-invalid'); mark(g);
+    }
+  });
+  const p = document.getElementById('pdpa');
+  if (!p.checked){ p.closest('.pdpa').classList.add('group-invalid'); p.closest('.pdpa').style.borderColor='var(--err)'; mark(p); }
+  else p.closest('.pdpa').style.borderColor='';
+  if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+  return ok;
+}
+
+f.addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = document.getElementById('err');
+  if (!validate()){ err.textContent='Sila lengkapkan semua ruangan bertanda *'; err.classList.add('show'); return; }
+  err.classList.remove('show');
+  if (document.getElementById('website').value) return; // bot
+
+  const fd = new FormData(f); fd.delete('website');
+  if (fd.get('bayaran') !== 'Tuntut HRDCorp') hrdFields.forEach(i => fd.delete(i.name));
+  fd.append('dihantar_pada', new Date().toLocaleString('ms-MY',{timeZone:'Asia/Kuala_Lumpur'}));
+  fd.append('sumber', new URLSearchParams(location.search).get('utm_source') || 'terus');
+
+  const btn = document.getElementById('btn'); btn.disabled = true; btn.textContent = 'Menghantar...';
+  try {
+    await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body:new URLSearchParams(fd) });
+    showDone(fd);
+  } catch (x) {
+    btn.disabled = false; btn.textContent = 'Daftar Sekarang ›';
+    err.textContent = 'Maaf, ada masalah sambungan. Cuba lagi atau WhatsApp kami di ' + WA_DISPLAY;
+    err.classList.add('show');
+  }
+});
+
+function showDone(fd){
+  const nama = fd.get('nama'), bayar = fd.get('bayaran');
+  const msg = `Salam, saya baru daftar program *Staf AI Anda*.\n\nNama: ${nama}\nSyarikat: ${fd.get('syarikat')}\nTelefon: ${fd.get('telefon')}\nKaedah bayaran: ${bayar}\n\nMohon pengesahan & langkah seterusnya. Terima kasih!`;
+  document.getElementById('wa').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  document.getElementById('done-txt').innerHTML = bayar === 'Tuntut HRDCorp'
+    ? `Terima kasih <b>${esc(nama)}</b>! Pasukan kami akan menghubungi PIC syarikat anda untuk urusan tuntutan HRDCorp. Tekan butang di bawah untuk sahkan pendaftaran.`
+    : `Terima kasih <b>${esc(nama)}</b>! Tekan butang di bawah untuk sahkan pendaftaran dan dapatkan butiran bayaran RM500.`;
+  f.style.display='none'; document.getElementById('done').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+</script>
+</body>
+</html>
