@@ -113,19 +113,29 @@
     <div class="ribbon"><b>Siap Bekerja Esok</b></div>
     <div class="sub">Bina Sendiri dalam 1 Hari</div>
     <div class="facts">
-      <div class="fact"><b>Tarikh</b>Akan Dimaklumkan</div>
+      <div class="fact"><b>Tarikh</b>10 &amp; 19 Dis 2026</div>
       <div class="fact"><b>Format</b>Atas Talian (Zoom)</div>
       <div class="fact"><b>Tempoh</b>1 Hari (7 Jam)</div>
-      <div class="fact"><b>Yuran</b>RM500 seorang<br>(Had 25 Peserta)</div>
+      <div class="fact"><b>Yuran</b>RM500 seorang<br>(25 Peserta / Batch)</div>
     </div>
   </header>
 
   <main class="card">
     <form id="f" novalidate>
 
+      <!-- TARIKH -->
+      <section class="sec">
+        <div class="sec-h"><div class="num">1</div><h2>Pilih Tarikh Kelas</h2></div>
+        <div class="opts c2 stack" id="g-batch">
+          <label class="opt"><input type="radio" name="batch" value="Batch 1 - Khamis 10 Dis 2026" required><span>📅 Batch 1 · Khamis, 10 Dis 2026<small>9.00 pagi – 5.00 petang · Sesuai untuk staf syarikat (HRDCorp)</small></span></label>
+          <label class="opt"><input type="radio" name="batch" value="Batch 2 - Sabtu 19 Dis 2026"><span>📅 Batch 2 · Sabtu, 19 Dis 2026<small>9.00 pagi – 5.00 petang · Sesuai untuk pemilik perniagaan</small></span></label>
+        </div>
+        <div class="hint">Setiap batch terhad kepada 25 peserta sahaja.</div>
+      </section>
+
       <!-- A -->
       <section class="sec">
-        <div class="sec-h"><div class="num">1</div><h2>Maklumat Peserta</h2></div>
+        <div class="sec-h"><div class="num">2</div><h2>Maklumat Peserta</h2></div>
         <div class="grid">
           <div class="full">
             <label class="lb" for="nama">Nama Penuh <span class="req">*</span></label>
@@ -169,7 +179,7 @@
 
       <!-- B -->
       <section class="sec">
-        <div class="sec-h"><div class="num">2</div><h2>Kaedah Bayaran (RM500 seorang)</h2></div>
+        <div class="sec-h"><div class="num">3</div><h2>Kaedah Bayaran (RM500 seorang)</h2></div>
         <div class="opts c2 stack" id="g-bayaran">
           <label class="opt"><input type="radio" name="bayaran" value="Bayar Sendiri" required><span>💳 Bayar Sendiri<small>Individu / syarikat bayar terus</small></span></label>
           <label class="opt"><input type="radio" name="bayaran" value="Tuntut HRDCorp"><span>🏢 Tuntut HRDCorp<small>Syarikat berdaftar dengan HRDCorp</small></span></label>
@@ -213,7 +223,7 @@
 
       <!-- C -->
       <section class="sec">
-        <div class="sec-h"><div class="num">3</div><h2>Persediaan Kelas</h2></div>
+        <div class="sec-h"><div class="num">4</div><h2>Persediaan Kelas</h2></div>
 
         <label class="lb">Bahagian mana anda paling perlukan Staf AI? <span class="req">*</span></label>
         <div class="opts c4" id="g-fokus" style="margin-bottom:16px">
@@ -306,7 +316,7 @@ function validate(){
     if (!bad && el.type === 'tel') bad = el.value.replace(/\D/g,'').length < 9;
     if (bad){ el.classList.add('invalid'); mark(el); }
   });
-  ['bayaran','fokus','tahap_ai','akaun_google'].forEach(n => {
+  ['batch','bayaran','fokus','tahap_ai','akaun_google'].forEach(n => {
     if (!f.querySelector(`input[name="${n}"]:checked`)){
       const g = f.querySelector(`input[name="${n}"]`).closest('.opts'); g.classList.add('group-invalid'); mark(g);
     }
@@ -343,11 +353,11 @@ f.addEventListener('submit', async e => {
 
 function showDone(fd){
   const nama = fd.get('nama'), bayar = fd.get('bayaran');
-  const msg = `Salam, saya baru daftar program *Staf AI Anda*.\n\nNama: ${nama}\nSyarikat: ${fd.get('syarikat')}\nTelefon: ${fd.get('telefon')}\nKaedah bayaran: ${bayar}\n\nMohon pengesahan & langkah seterusnya. Terima kasih!`;
+  const msg = `Salam, saya baru daftar program *Staf AI Anda*.\n\nNama: ${nama}\nSyarikat: ${fd.get('syarikat')}\nTelefon: ${fd.get('telefon')}\nTarikh: ${fd.get('batch')}\nKaedah bayaran: ${bayar}\n\nMohon pengesahan & langkah seterusnya. Terima kasih!`;
   document.getElementById('wa').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
   document.getElementById('done-txt').innerHTML = bayar === 'Tuntut HRDCorp'
-    ? `Terima kasih <b>${esc(nama)}</b>! Pasukan kami akan menghubungi PIC syarikat anda untuk urusan tuntutan HRDCorp. Tekan butang di bawah untuk sahkan pendaftaran.`
-    : `Terima kasih <b>${esc(nama)}</b>! Tekan butang di bawah untuk sahkan pendaftaran dan dapatkan butiran bayaran RM500.`;
+    ? `Terima kasih <b>${esc(nama)}</b>! Tempat anda untuk <b>${esc(fd.get('batch'))}</b> telah direkodkan. Pasukan kami akan menghubungi PIC syarikat anda untuk urusan tuntutan HRDCorp. Tekan butang di bawah untuk sahkan pendaftaran.`
+    : `Terima kasih <b>${esc(nama)}</b>! Tempat anda untuk <b>${esc(fd.get('batch'))}</b> telah direkodkan. Tekan butang di bawah untuk sahkan pendaftaran dan dapatkan butiran bayaran RM500.`;
   f.style.display='none'; document.getElementById('done').classList.add('show');
   window.scrollTo({top:0,behavior:'smooth'});
 }
